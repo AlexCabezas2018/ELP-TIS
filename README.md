@@ -2,7 +2,7 @@
 
 ## Instalación en local
 Es necesario tener instalado NodeJS y npm para poder empezar  
-- [Node JS](https://nodejs.org/es/)  
+- [Node JS (descargar el 'recomendado para la mayoria')](https://nodejs.org/es/)  
 
 **npm** viene instalado junto con Node.
 
