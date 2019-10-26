@@ -11,4 +11,4 @@ Es necesario que instaleis las dependencias con npm.
     npm install
 Para poder arrancar el servidor en local, basta con poner:  
     
-    node start index.js
+    node index.js
