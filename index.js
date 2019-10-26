@@ -5,6 +5,7 @@
 
 const Papa = require('papaparse');
 const fs = require('fs');
+const express = require('express');
 
 var fakeNews = [];
 
@@ -20,6 +21,18 @@ function init() {
     }
 
     Papa.parse(file, config);
+    let app = express();
+
+    app.listen(3000, function () {
+        console.log('Listening on port 3000!');
+    });
+
+    app.use(express.static('public')); //usamos la vista html del cliente. Además, express cargará todo lo que se usa en la carpeta public
+
+    /* Routes */
+    app.get('/api/getNotice', (req, res) => {
+        res.status(200).json(pickRandomNotice()).end();
+    });
 }
 
 function parseData(data) {
