@@ -1,0 +1,23 @@
+{
+  "name": "elp-tis",
+  "version": "1.0.0",
+  "description": "Trabajo de impacto social realizado para la asignatura de Ética, Legislación y Profesión.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexCabezas2018/ELP-TIS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexCabezas2018/ELP-TIS/issues"
+  },
+  "homepage": "https://github.com/AlexCabezas2018/ELP-TIS#readme",
+  "dependencies": {
+    "file-system": "^2.2.2",
+    "papaparse": "^5.1.0"
+  }
+}
