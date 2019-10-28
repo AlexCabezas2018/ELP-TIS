@@ -1,0 +1,33 @@
+input[type=checkbox] {
+    position: absolute; /* Force the checkbox at the start of the container */
+    cursor: pointer; /* Indicate the curtain is clickable */
+    width: 27%; /* The checkbox is as wide as the component */
+    height: 5%; /* The checkbox is as tall as the component */
+    z-index: 100; /* Make sure the checkbox is on top of everything else */
+    opacity: 0; /* Hide the checkbox */
+  }
+
+.curtain-panel-center{
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+}
+
+input[type=checkbox]:checked ~ div.curtain-panel-left {
+    transform: translateX(-8%);
+    transition: all 1s ease;
+}
+
+input[type=checkbox]:checked ~ div.curtain-panel-right {
+    transform: translateX(2%);
+    transition: all 1s ease;
+}
+
+input[type=checkbox]:checked ~ div.curtain-panel-center {
+    transition: all 1s ease;
+    width: auto;
+    height: auto;
+    opacity: 100%;
+}
+
+
