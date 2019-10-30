@@ -1,10 +1,10 @@
 input[type=checkbox] {
-    position: absolute; /* Force the checkbox at the start of the container */
-    cursor: pointer; /* Indicate the curtain is clickable */
-    width: 27%; /* The checkbox is as wide as the component */
-    height: 5%; /* The checkbox is as tall as the component */
-    z-index: 100; /* Make sure the checkbox is on top of everything else */
-    opacity: 0; /* Hide the checkbox */
+    position: absolute; 
+    cursor: pointer; 
+    width: 27%;
+    height: 5%; 
+    z-index: 100; 
+    opacity: 0; 
   }
 
 .curtain-panel-center{
@@ -30,4 +30,26 @@ input[type=checkbox]:checked ~ div.curtain-panel-center {
     opacity: 100%;
 }
 
+@media only screen and (max-width: 600px) {
+    header {
+        display: flex;
+        flex-direction: column;        
+    }
 
+    input[type=checkbox]:checked ~ div.curtain-panel-left {
+        transform: translateY(-8%);
+        transition: all 1s ease;
+    }
+    
+    input[type=checkbox]:checked ~ div.curtain-panel-right {
+        transform: translateY(5%);
+        transition: all 1s ease;
+    }
+    
+    input[type=checkbox]:checked ~ div.curtain-panel-center {
+        transition: all 1s ease;
+        width: auto;
+        height: auto;
+        opacity: 100%;
+    }
+}

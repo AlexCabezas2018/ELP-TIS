@@ -5,6 +5,7 @@
 
 body{
     font-family: 'Roboto Mono', monospace;
+    background: #ccc;
 }
 
 header{
@@ -16,5 +17,14 @@ header{
     background:#222;
     color: #FFFFFF;
     overflow:hidden;
-    opacity: 90%;
+}
+
+nav{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-color: #444;
+    text-align: center;
+    padding: 0;
+    margin: 0;
 }
