@@ -30,9 +30,5 @@ nav a:active {
         margin: 0;
         padding: 0;
         border-bottom: 1px solid #ccc;
-
-    }
-    .curtain-panel-left, .curtain-panel-right, .curtain-panel-center{ 
-        text-align: center;
     }
 }

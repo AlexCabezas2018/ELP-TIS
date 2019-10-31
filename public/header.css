@@ -36,6 +36,15 @@ input[type=checkbox]:checked ~ div.curtain-panel-center {
         flex-direction: column;        
     }
 
+    .curtain-panel-left, .curtain-panel-right, .curtain-panel-center{ 
+        text-align: center;
+    }
+
+    .curtain-panel-center{
+        position: fixed;
+        opacity: 0%;
+    }
+
     input[type=checkbox]:checked ~ div.curtain-panel-left {
         transform: translateY(-8%);
         transition: all 1s ease;
@@ -51,5 +60,6 @@ input[type=checkbox]:checked ~ div.curtain-panel-center {
         width: auto;
         height: auto;
         opacity: 100%;
+        position: relative;
     }
 }

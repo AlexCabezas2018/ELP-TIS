@@ -3,12 +3,20 @@
     padding: 0;
 }
 
+html{
+    height: 100%;
+}
+
 body{
-    font-family: 'Roboto Mono', monospace;
-    background: #ccc;
+    font-family: 'Roboto Mono', sans-serif;
+    background: linear-gradient(rgba(255, 255, 255, 0.404), rgba(255, 255, 255, 0.226)), url(resources/background.jpg) no-repeat center center;
+    background-size: cover;
+
 }
 
 header{
+    font-family: 'Playfair Display', serif;
+    font-style: unset;
     display: flex;
     align-content: center;
     justify-content: center;
@@ -17,6 +25,7 @@ header{
     background:#222;
     color: #FFFFFF;
     overflow:hidden;
+    opacity: 98%;
 }
 
 nav{
@@ -27,4 +36,5 @@ nav{
     text-align: center;
     padding: 0;
     margin: 0;
+    opacity: 93%;
 }
