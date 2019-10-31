@@ -1,0 +1,29 @@
+.text-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+    background-color: #ffffff;
+    width: 60%;
+    height: 28em; 
+    opacity: 95%;
+}
+
+button{
+    width: 50%;
+    height: 100%;
+    font-size: 2em;
+    opacity: 0%;
+}
+
+.button-false:hover{
+    transition: 0.5s;
+    opacity: 90%;
+    background: red;
+}
+
+.button-true:hover{
+    transition: 0.5s;
+    opacity: 90%;
+    background: green;
+}
