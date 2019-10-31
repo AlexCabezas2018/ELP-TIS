@@ -4,7 +4,8 @@
   "description": "Trabajo de impacto social realizado para la asignatura de Ética, Legislación y Profesión.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "file-system": "^2.2.2",
+    "nodemon": "^1.19.4",
     "papaparse": "^5.1.0"
   }
 }
