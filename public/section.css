@@ -6,24 +6,28 @@
     background-color: #ffffff;
     width: 60%;
     height: 28em; 
-    opacity: 95%;
+    opacity: 0.95;
 }
 
 button{
     width: 50%;
     height: 100%;
     font-size: 2em;
-    opacity: 0%;
+    opacity: 0;
 }
 
 .button-false:hover{
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
     transition: 0.5s;
-    opacity: 90%;
+    opacity: 0.9;
     background: red;
 }
 
 .button-true:hover{
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
     transition: 0.5s;
-    opacity: 90%;
+    opacity: 0.9;
     background: green;
 }

@@ -13,13 +13,15 @@ Es necesario que instaleis las dependencias con npm (tanto si arrancais el proye
 
 Para poder arrancar el servidor en local, basta con poner:  
     
-    node index.js
+    npm start
 
 Saldrá algo del estilo:
 
     Listening on port 3000!
     [INFO] File readed
     [INFO] Data parsed
+
+**Cada vez que hagamos cambios en el backend y guardemos, el server se reiniciará automaticamente**
 
 Ahora, si vas a [http://localhost:3000](http://localhost:3000) deberás ver la página web del cliente.
 Para parar el server, basta con pulsar CTRL+C en la terminal.
