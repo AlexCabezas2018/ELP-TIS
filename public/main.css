@@ -11,7 +11,6 @@ body{
     font-family: 'Roboto Mono', sans-serif;
     background: linear-gradient(rgba(255, 255, 255, 0.404), rgba(255, 255, 255, 0.226)), url(resources/background.jpg) no-repeat center center;
     background-size: cover;
-
 }
 
 header{
