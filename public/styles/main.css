@@ -3,13 +3,12 @@
     padding: 0;
 }
 
-html{
-    height: 100%;
-}
-
 body{
     font-family: 'Roboto Mono', sans-serif;
-    background: linear-gradient(rgba(255, 255, 255, 0.404), rgba(255, 255, 255, 0.226)), url(resources/background.jpg) no-repeat center center;
+    background: linear-gradient(rgba(255, 255, 255, 0.465), rgba(255, 255, 255, 0.465)), url(/resources/background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
 }
 
@@ -39,7 +38,7 @@ nav{
 }
 
 footer{
-    display: flex;
+    right: 0;
     left: 0;
     bottom: 0;
     width: 100%;
