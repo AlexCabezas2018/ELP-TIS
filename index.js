@@ -5,42 +5,71 @@
 
 const Papa = require('papaparse');
 const fs = require('fs');
-const express = require('express');
+const Express = require('express');
+
+require('dotenv').config(); //env file
 
 var fakeNews = [];
 
 function init() {
-    const file = fs.createReadStream('train.csv');
-    const config = {
-        delimiter: ',',
-        header: true,
-        complete: function (results, file) {
-            console.log('[INFO] File readed');
-            parseData(results.data);
-        }
-    }
+    parseFile('dataset/fake-news.csv', data =>{
+        data.forEach(elem =>{
+            fakeNews.push({ 
+                notice: elem.Statement, 
+                isFake: (elem.Label == 'TRUE') ? false : true,
+                notice_url: ""
+            }); //dataset say if a new is real or not. this field stores if the new is fake or not
+        })
+    });
 
-    Papa.parse(file, config);
-    let app = express();
+    parseFile('dataset/gossipcop_fake.csv', data => {
+        data.forEach(elem => {
+            fakeNews.push({
+                notice: elem.title,
+                isFake: true,
+                notice_url: elem.news_url
+            })
+        });  
+    });
 
-    app.listen(3000, function () {
+    parseFile('dataset/politifact_fake.csv', data => {
+        data.forEach(elem => {
+            fakeNews.push({
+                notice: elem.title,
+                isFake: true,
+                notice_url: elem.news_url
+            })
+        });
+    })
+
+    let app = Express();
+
+    app.listen(process.env.PORT, function () {
         console.log('Listening on port 3000!');
     });
 
-    app.use(express.static('public')); //usamos la vista html del cliente. Además, express cargará todo lo que se usa en la carpeta public
+    app.use(Express.static('public'));
+
 
     /* Routes */
-    app.get('/api/getNotice', (req, res) => {
+    app.get('/api/notice', (req, res) => {
         res.status(200).json(pickRandomNotice()).end();
     });
 }
 
-function parseData(data) {
-    fakeNews = data.reduce((ac, elem) => {
-        ac.push({ "Notice": elem['Statement'], isFake: (elem['Label'] == 'TRUE') ? false : true }); //dataset say if a new is real or not. this field stores if the new is fake or not
-        return ac;
-    }, []);
-    console.log('[INFO] Data parsed');
+function parseFile(fileName, parseFunction) {
+    const file = fs.createReadStream(fileName);
+    const config = {
+        delimiter: ',',
+        header: true,
+        complete: function (results, file) {
+            console.log(`[INFO] File ${fileName} readed`);
+            parseFunction(results.data);
+            console.log(`[INFO] Data from ${fileName} parsed`);
+        }
+    }
+
+    Papa.parse(file, config);
 }
 
 function pickRandomNotice() {
