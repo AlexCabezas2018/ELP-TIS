@@ -1,15 +1,19 @@
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+    background-color: #ffffff;
+    margin: 1em 10em;
+    opacity: 0.95;
+}
+
 h2{
     text-align: center;
     display: block;
     border-bottom: 1px solid gray;
     margin: 0.5em;
-}
-
-.wrapper{
-    border: 1px solid lightgray;
-    background-color: #ffffff;
-    margin: 1em 10em;
-    opacity: 0.95;
 }
 
 p{
@@ -71,5 +75,5 @@ p{
 	.grid-container {
 	    display: flex;
 	    flex-direction: column;
-	}
+    }
 }
