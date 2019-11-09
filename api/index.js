@@ -12,7 +12,7 @@ require('dotenv').config(); //env file
 var fakeNews = [];
 
 function init() {
-    parseFile('dataset/fake-news.csv', data =>{
+    parseFile('api/dataset/fake-news.csv', data =>{
         data.forEach(elem =>{
             fakeNews.push({ 
                 notice: elem.Statement, 
@@ -22,7 +22,7 @@ function init() {
         })
     });
 
-    parseFile('dataset/gossipcop_fake.csv', data => {
+    parseFile('api/dataset/gossipcop_fake.csv', data => {
         data.forEach(elem => {
             fakeNews.push({
                 notice: elem.title,
@@ -32,7 +32,7 @@ function init() {
         });  
     });
 
-    parseFile('dataset/politifact_fake.csv', data => {
+    parseFile('api/dataset/politifact_fake.csv', data => {
         data.forEach(elem => {
             fakeNews.push({
                 notice: elem.title,
