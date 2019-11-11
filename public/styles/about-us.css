@@ -5,7 +5,7 @@
     align-items: center;
     border: 1px solid lightgray;
     background-color: #ffffff;
-    margin: 1em 10em;
+    margin: 1em;
     opacity: 0.95;
 }
 
@@ -29,12 +29,14 @@ p{
     position: relative;
     margin: 1em;
     text-align: center;
+    width: 14em;
+    height: 14em;
 }
 
-.grid-item img{
-    width: 15em;
-    height: 15em;
+.grid-item img, .overlay{
     border: 1px solid gray;
+    width: 14em;
+    height: 14em;
 }
 
 .overlay {
@@ -43,8 +45,6 @@ p{
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100%;
-    width: 100%;
     opacity: 0;
     transition: .5s ease;
     background-color: rgb(26, 159, 204);
@@ -71,9 +71,17 @@ p{
     text-align: center;
   }
 
-@media only screen and (max-width: 730px) {
-	.grid-container {
+@media only screen and (max-width: 850px) {
+	.wrapper, #container {
 	    display: flex;
-	    flex-direction: column;
+        flex-direction: column;
+        min-width: 315px;
+    }
+
+    .grid-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
