@@ -1,3 +1,16 @@
+.div-counter{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+.counter{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+}
+
 input[type=checkbox] {
     position: absolute; 
     cursor: pointer; 
