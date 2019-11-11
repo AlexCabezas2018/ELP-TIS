@@ -8,7 +8,7 @@ h2{
     border: 1px solid #ffffff;
     background-color: #ffffff;
     width: 60%;
-    height: 30em;
+    height: 70%;
     opacity: 0.95;
     margin-top: 3em;
 }
@@ -24,7 +24,7 @@ textarea{
 
 .buttons{
     width: 60%;
-    height: 30.2em;
+    height: 70.3%;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -62,6 +62,7 @@ button{
 .button-false:active, .button-true:active{
     opacity: 1;
 }
+
 
 @media only screen and (max-width: 600px) {
     h2{      

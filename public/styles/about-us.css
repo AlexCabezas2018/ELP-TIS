@@ -75,7 +75,7 @@ p{
 	.wrapper, #container {
 	    display: flex;
         flex-direction: column;
-        min-width: 315px;
+        min-width: 400px;
     }
 
     .grid-container{

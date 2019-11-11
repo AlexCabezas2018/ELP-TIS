@@ -1,5 +1,5 @@
 .manual{
-    margin-top: 650px;
+    margin-top: 600px;
     margin-bottom: 5%;
     padding:5%;
     height: 150em;
@@ -28,11 +28,22 @@ p{
 }
 
 .pdf-buttons a{
+    text-align: center;
+    text-decoration: none;
     background-color: #2c2b2b;
     color:white;
-    border-radius: 15px;
+    border-radius: 5px;
     margin: 0.5em;  
     padding: 2% 1%;
+}
+
+.pdf-buttons a:hover {
+    background-color: #005f5f;
+}
+   
+.pdf-buttons a:active {
+    background-color: gray;
+    cursor: pointer;
 }
 
 .manual p{
