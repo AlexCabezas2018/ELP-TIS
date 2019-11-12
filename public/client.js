@@ -11,6 +11,7 @@ let game = {
 
 window.onload = () => getNotice(res => {
     currentNotice = res;
+    printNotice(currentNotice);
     console.log(currentNotice);
 });
 
@@ -34,6 +35,11 @@ function step(value) {
         console.log(`% score: ${(game.correct / game.total) * 100}`);
         currentNotice = res;
         console.log(currentNotice);
+        printNotice(currentNotice);
     });
+}
 
+function printNotice(currentNotice){
+    if (currentNotice.notice_url=="") document.getElementById("notice").innerHTML = currentNotice.notice + "<br>";
+    else  document.getElementById("notice").innerHTML= currentNotice.notice + "<center><a href="+currentNotice.notice_url + "\" id =\"notice-link\">Click here to see the Notice!</a></center>";
 }
