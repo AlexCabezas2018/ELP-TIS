@@ -5,6 +5,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Fake News</title>
@@ -15,10 +16,12 @@
     <link rel="stylesheet" href="styles/manual.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+    <script src="client.js"></script>
 </head>
+
 <body>
-  <header>
-    <!--
+    <header>
+        <!--
         <div class="div-counter">
             <script class="counter" type="text/javascript" src="http://services.webestools.com/cpt_visitors/64130-1-5.js"></script>
         </div>
@@ -39,196 +42,205 @@
             <textarea readonly name="textarea" rows="10" cols="50"></textarea>
         </div>
         <div class="buttons">
-            <button class="button-true">True</button>
-            <button class="button-false">False</button>
+            <button class="button-true" onclick="step(true)">True</button>
+            <button class="button-false" onclick="step(false)">False</button>
         </div>
         <!--MANUAL TO BEAT FAKE NEWS-->
         <div class="manual text-area">
             <h2 id="manual_title">HOW TO BEAT FAKE NEWS?</h2>
             <!--CHAPTER 1:A piece of history -->
             <h3 class="chapter">A piece of history</h3>
-                <p>
-                    Today we hear the term Fake News everywhere. It may seem surprising but false news is
-                    not a new term, it goes back to the time of Rome, where we find the first example.
-                </p>
-                <p>
-                    Throughout history there are many examples of fake news and the impact they have, we can
-                    highlight some legends told after the discovery of America as Country of Cage or El dorado
-                    to Nazi propaganda, which through media such as radio claimed that the political enemies of
-                    the regime, especially Jews, were responsible for the discomfort and difficulties faced by
-                    German society.
-                </p>
-                <p>
-                    In recent years the number of false news has grown exponentially due to the existence of a
-                    new mechanism that allows its rapid dissemination, the Internet.
-                </p>
-                <p>
-                    Below is a list of some of the most relevant false news in recent years:
-                </p>
-                <br>
-                <ul>
-                    <li>
-                        <h4>Trump achieved the largest television audience of any investiture</h4>
-                        <p>
-                            Donald Trump boasted in February 2017 that he had the largest audience (45.6 million
-                            viewers) in the history of presidential inauguration. In fact, Obama's in 2010 was followed by
-                            48 million people. George W. Bush's in 2003, by 62.1.
-                        </p>
-                    </li>
-                    <li>
-                        <h4>The Russians manipulated the U.S elections</h4>
-                        <p>
-                            According to a poll, 52 percent of Democratic Party voters believe the Russian secret
-                            services influenced the U.S. presidential election to give Trump victory. At the moment, there
-                            is no evidence of this.
-                        </p>
-                    </li>
-                    <li>
-                        <h4>The agony of Hugo Chávez</h4>
-                        <p>
-                            In January 2013, the newspaper El País (Spain) published on its front page a photo showing
-                            the Venezuelan leader intubated in a Cuban hospital during the treatment of the serious
-                            illness that would end his life two months later. The image, provided by the press agency
-                            GtresOnline, was removed after a few hours by the newspaper itself after it was known that
-                            the person portrayed was not Chavez, but a person who resembled him.
-                        </p>
-                    </li>
-                </ul>
+            <p>
+                Today we hear the term Fake News everywhere. It may seem surprising but false news is
+                not a new term, it goes back to the time of Rome, where we find the first example.
+            </p>
+            <p>
+                Throughout history there are many examples of fake news and the impact they have, we can
+                highlight some legends told after the discovery of America as Country of Cage or El dorado
+                to Nazi propaganda, which through media such as radio claimed that the political enemies of
+                the regime, especially Jews, were responsible for the discomfort and difficulties faced by
+                German society.
+            </p>
+            <p>
+                In recent years the number of false news has grown exponentially due to the existence of a
+                new mechanism that allows its rapid dissemination, the Internet.
+            </p>
+            <p>
+                Below is a list of some of the most relevant false news in recent years:
+            </p>
+            <br>
+            <ul>
+                <li>
+                    <h4>Trump achieved the largest television audience of any investiture</h4>
+                    <p>
+                        Donald Trump boasted in February 2017 that he had the largest audience (45.6 million
+                        viewers) in the history of presidential inauguration. In fact, Obama's in 2010 was followed by
+                        48 million people. George W. Bush's in 2003, by 62.1.
+                    </p>
+                </li>
+                <li>
+                    <h4>The Russians manipulated the U.S elections</h4>
+                    <p>
+                        According to a poll, 52 percent of Democratic Party voters believe the Russian secret
+                        services influenced the U.S. presidential election to give Trump victory. At the moment, there
+                        is no evidence of this.
+                    </p>
+                </li>
+                <li>
+                    <h4>The agony of Hugo Chávez</h4>
+                    <p>
+                        In January 2013, the newspaper El País (Spain) published on its front page a photo showing
+                        the Venezuelan leader intubated in a Cuban hospital during the treatment of the serious
+                        illness that would end his life two months later. The image, provided by the press agency
+                        GtresOnline, was removed after a few hours by the newspaper itself after it was known that
+                        the person portrayed was not Chavez, but a person who resembled him.
+                    </p>
+                </li>
+            </ul>
             <!--CHAPTER 2: The target of the fake news -->
             <h3 class="chapter">The target of the fake news</h3>
-                <p>The main targets of fake news generated on the Internet today are:</p>
-                <ul>
-                    <li>Affect the results of electoral processes.</li>
-                    <li>Influencing the strategic decisions of large companies or enterprises whether public
-                        or private.</li>
-                    <li>Attack personal or business reputation.</li>
-                    <li>Viralize the spread of malware that may contain this news through a link that invites
-                        you to read more about this news.</li>
-                 </ul>
+            <p>The main targets of fake news generated on the Internet today are:</p>
+            <ul>
+                <li>Affect the results of electoral processes.</li>
+                <li>Influencing the strategic decisions of large companies or enterprises whether public
+                    or private.</li>
+                <li>Attack personal or business reputation.</li>
+                <li>Viralize the spread of malware that may contain this news through a link that invites
+                    you to read more about this news.</li>
+            </ul>
             <!--CHAPTER 3: Fight against fake-news -->
             <h3 class="chapter">Fight against fake-news</h3>
-                <!--CHAPTER 3.1: Identify the fake news -->
-                <h4>Identify the fake news</h4>
-                <ol>
-                    <li>
-                        <p><strong>Beware of strange or unknown URLs.</strong> Be skeptical of strange domain names. In
-                            addition, news posted on blog sites (with domains ending in wordpress.com,
-                            blogspot.com, or similar phrases) many are unreliable.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>Find the original article.</strong> If you're looking at a news channel that adds news from a
-                            variety of sources, it's important to try to find the place where the article was first
-                            published. Follow the links in the article that lead to the report source, and evaluate
-                            that source. Read other pieces of them to see if they have a particular inclination or
-                            bias.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>Read the "About Us" section of a website.</strong> Most legitimate news sites will have a
-                            direct section describing what they do. If the language of the "About" section is
-                            extreme or melodramatic, it may not be a reliable source.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>Connect key story phrases to your search engine (Google, Mozilla Firefox...).</strong> If
-                            there are elements of the article that seem outlandish, pull out key phrases or ideas
-                            and connect them to Google or another search engine. If the phrase is true and of
-                            journalistic interest, it should be reported by other sources.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>Check the date of the story.</strong> Sometimes an old story makes rounds like new
-                            information. This lack of context can skew the perception of the story. Always read
-                            the original publication date of a particular article.
-                        </p>
-                    </li>
-                    <li>
-                        <p><strong>Look carefully at the images.</strong> Check to see if the images in the article match the
-                            details in the article. For example, make sure the photos were taken at night if the
-                            article incident occurred at night.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>Use online fact-checking services.</strong> Numerous websites, such as Snopes, Politifact,
-                            and Factcheck.org, are dedicated to trying to check the facts for news articles.
-                            Search a topic or article through a fact-checking site to see if it can be trusted.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>Consider the political bias of a story.</strong> Each time you read a story, think about who
-                            could benefit from the information.
-                        </p>
-                    </li>
-                </ol>
-                <!--CHAPTER 3.2: Share the news? -->
-                <h4>Share the news?</h4>
-                <ol>
-                    <li>
-                        <p>
-                            <strong>Think carefully before</strong> One of the most effective ways to stop the
-                            spread of false news is to simply slow down and think before making for example a
-                            retweet or sharing news articles on social networks. You have to take the time to
-                            critically analyze a news item and its source before publishing it.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>Don't share headline-based stories.</strong> To determine the validity of a news article, you
-                            really need to read it. Never share headline-based news.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>Share real news on your social networks.</strong> It can help reduce the visibility of false
-                            news if we increase the number and true news.
-                        </p>
-                    </li>
-                </ol>
-                <!--CHAPTER 3.3: Teach how to fight against fake-news -->
-                <h4>Teach how to fight against fake-news</h4>
-                <ol>
-                    <li>
-                        <p>
-                            <strong>Encourage friends and family to avoid inflammatory media.</strong> Media that are
-                            known to be polarizing and prone to exaggeration are more likely to share biased or
-                            inaccurate stories.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>Advise friends and family to read the entire article before refueling.</strong>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>If you see false news stories coming through your social network stream,</strong> look
-                            who's replenishing them and report them.
-                        </p>
-                    </li>
-                    <li>
-                       <p>
-                           <strong>Teach friends and family how to identify false news,</strong> outline some tips for
-                           catching dubious or totally false articles, or share this guide to combat fake news.
-                       </p> 
-                    </li>
-                </ol>
-                <p id ="final-advice">
-                    Keep in mind that the best way to identify a false news story is to contrast the information
-                    that appears on it or even search if the news itself is a fake new.
-                </p>
-                <p><em>If you want to download this manual click the button</em></p>
-                <div class="pdf-buttons">
-                    <a href="manual/fake_news_manual_en.pdf" download= >DOWNLOAD MANUAL (ENGLISH VERSION)</a>
-                    <a href="manual/fake_news_manual_es.pdf" download=>DOWNLOAD MANUAL (SPANISH VERSION)</a>
-                </div>
+            <!--CHAPTER 3.1: Identify the fake news -->
+            <h4>Identify the fake news</h4>
+            <ol>
+                <li>
+                    <p><strong>Beware of strange or unknown URLs.</strong> Be skeptical of strange domain names. In
+                        addition, news posted on blog sites (with domains ending in wordpress.com,
+                        blogspot.com, or similar phrases) many are unreliable.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>Find the original article.</strong> If you're looking at a news channel that adds news
+                        from a
+                        variety of sources, it's important to try to find the place where the article was first
+                        published. Follow the links in the article that lead to the report source, and evaluate
+                        that source. Read other pieces of them to see if they have a particular inclination or
+                        bias.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>Read the "About Us" section of a website.</strong> Most legitimate news sites will have
+                        a
+                        direct section describing what they do. If the language of the "About" section is
+                        extreme or melodramatic, it may not be a reliable source.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>Connect key story phrases to your search engine (Google, Mozilla Firefox...).</strong>
+                        If
+                        there are elements of the article that seem outlandish, pull out key phrases or ideas
+                        and connect them to Google or another search engine. If the phrase is true and of
+                        journalistic interest, it should be reported by other sources.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>Check the date of the story.</strong> Sometimes an old story makes rounds like new
+                        information. This lack of context can skew the perception of the story. Always read
+                        the original publication date of a particular article.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>Look carefully at the images.</strong> Check to see if the images in the article match
+                        the
+                        details in the article. For example, make sure the photos were taken at night if the
+                        article incident occurred at night.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>Use online fact-checking services.</strong> Numerous websites, such as Snopes,
+                        Politifact,
+                        and Factcheck.org, are dedicated to trying to check the facts for news articles.
+                        Search a topic or article through a fact-checking site to see if it can be trusted.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>Consider the political bias of a story.</strong> Each time you read a story, think about
+                        who
+                        could benefit from the information.
+                    </p>
+                </li>
+            </ol>
+            <!--CHAPTER 3.2: Share the news? -->
+            <h4>Share the news?</h4>
+            <ol>
+                <li>
+                    <p>
+                        <strong>Think carefully before</strong> One of the most effective ways to stop the
+                        spread of false news is to simply slow down and think before making for example a
+                        retweet or sharing news articles on social networks. You have to take the time to
+                        critically analyze a news item and its source before publishing it.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>Don't share headline-based stories.</strong> To determine the validity of a news
+                        article, you
+                        really need to read it. Never share headline-based news.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>Share real news on your social networks.</strong> It can help reduce the visibility of
+                        false
+                        news if we increase the number and true news.
+                    </p>
+                </li>
+            </ol>
+            <!--CHAPTER 3.3: Teach how to fight against fake-news -->
+            <h4>Teach how to fight against fake-news</h4>
+            <ol>
+                <li>
+                    <p>
+                        <strong>Encourage friends and family to avoid inflammatory media.</strong> Media that are
+                        known to be polarizing and prone to exaggeration are more likely to share biased or
+                        inaccurate stories.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>Advise friends and family to read the entire article before refueling.</strong>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>If you see false news stories coming through your social network stream,</strong> look
+                        who's replenishing them and report them.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>Teach friends and family how to identify false news,</strong> outline some tips for
+                        catching dubious or totally false articles, or share this guide to combat fake news.
+                    </p>
+                </li>
+            </ol>
+            <p id="final-advice">
+                Keep in mind that the best way to identify a false news story is to contrast the information
+                that appears on it or even search if the news itself is a fake new.
+            </p>
+            <p><em>If you want to download this manual click the button</em></p>
+            <div class="pdf-buttons">
+                <a href="manual/fake_news_manual_en.pdf" download=>DOWNLOAD MANUAL (ENGLISH VERSION)</a>
+                <a href="manual/fake_news_manual_es.pdf" download=>DOWNLOAD MANUAL (SPANISH VERSION)</a>
+            </div>
         </div>
     </section>
 </body>
+
 </html>

@@ -12,10 +12,10 @@ require('dotenv').config(); //env file
 var fakeNews = [];
 
 function init() {
-    parseFile('api/dataset/fake-news.csv', data =>{
-        data.forEach(elem =>{
-            fakeNews.push({ 
-                notice: elem.Statement, 
+    parseFile('api/dataset/fake-news.csv', data => {
+        data.forEach(elem => {
+            fakeNews.push({
+                notice: elem.Statement,
                 isFake: (elem.Label == 'TRUE') ? false : true,
                 notice_url: ""
             }); //dataset say if a new is real or not. this field stores if the new is fake or not
@@ -29,7 +29,7 @@ function init() {
                 isFake: true,
                 notice_url: elem.news_url
             })
-        });  
+        });
     });
 
     parseFile('api/dataset/politifact_fake.csv', data => {
