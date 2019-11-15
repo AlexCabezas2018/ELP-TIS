@@ -9,6 +9,18 @@
     opacity: 0.95;
 }
 
+.about-info{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.about-info p{
+    margin: 0.5% auto;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
 h2{
     text-align: center;
     display: block;
