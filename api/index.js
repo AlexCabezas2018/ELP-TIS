@@ -6,6 +6,7 @@
 const Papa = require('papaparse');
 const fs = require('fs');
 const Express = require('express');
+const mail = require('./mail.js');
 
 require('dotenv').config(); //env file
 
@@ -55,6 +56,11 @@ function init() {
     app.get('/api/notice', (req, res) => {
         res.status(200).json(pickRandomNotice()).end();
     });
+
+    app.post('/api/contact/', (req, res) => {
+        mail.sendEmail(req, res);
+    });
+
 }
 
 function parseFile(fileName, parseFunction) {
