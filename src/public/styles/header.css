@@ -1,0 +1,90 @@
+.div-counter{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+.counter{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+}
+
+input[type=checkbox] {
+    position: absolute; 
+    cursor: pointer; 
+    width: 27%;
+    height: 5%; 
+    z-index: 100; 
+    opacity: 0; 
+  }
+
+.curtain-panel-center{
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+}
+
+input[type=checkbox]:checked ~ div.curtain-panel-left {
+    -moz-transform: translateX(-8%);
+    -webkit-transform: translateX(-8%);
+    -ms-transform: translateX(-8%);
+    transform: translateX(-8%);
+    transition: all 1s ease;
+}
+
+input[type=checkbox]:checked ~ div.curtain-panel-right {
+    -moz-transform: translateX(2%);
+    -webkit-transform: translateX(2%);
+    -ms-transform: translateX(2%);
+    transform: translateX(2%);
+    transition: all 1s ease;
+}
+
+input[type=checkbox]:checked ~ div.curtain-panel-center {
+    transition: all 1s ease;
+    width: auto;
+    height: auto;
+    opacity: 1;
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        display: flex;
+        flex-direction: column;        
+    }
+
+    .curtain-panel-left, .curtain-panel-right, .curtain-panel-center{ 
+        text-align: center;
+    }
+
+    .curtain-panel-center{
+        position: fixed;
+        opacity: 0;
+    }
+
+    input[type=checkbox]:checked ~ div.curtain-panel-left {
+        -moz-transform: translateY(-8%);
+        -webkit-transform: translateY(-8%);
+        -ms-transform: translateY(-8%);
+        transform: translateY(-8%);
+        transition: all 1s ease;
+    }
+    
+    input[type=checkbox]:checked ~ div.curtain-panel-right {
+        -moz-transform: translateY(5%);
+        -webkit-transform: translateY(5%);
+        -ms-transform: translateY(5%);
+        transform: translateY(5%);
+        transition: all 1s ease;
+    }
+    
+    input[type=checkbox]:checked ~ div.curtain-panel-center {
+        transition: all 1s ease;
+        width: auto;
+        height: auto;
+        opacity: 1;
+        position: relative;
+    }
+}
