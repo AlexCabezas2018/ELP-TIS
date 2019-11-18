@@ -18,7 +18,7 @@ function init() {
                 notice: elem.Statement,
                 isFake: (elem.Label == 'TRUE') ? false : true,
                 notice_url: ""
-            }); //dataset say if a new is real or not. this field stores if the new is fake or not
+            }); //dataset say if a news item is real or not. this field stores if the news item is fake or not
         })
     });
 
