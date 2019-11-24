@@ -21,17 +21,19 @@ function getNotice(callback) {
         .then(res => callback(res));
 }
 
-function step(value) {
+function step(value,info) {
     getNotice(res => {
-        if (value == currentNotice.isFake) {
-            console.log("Correct!");
-            game.correct++;
+        if(!info){
+            if (value == currentNotice.isFake) {
+                console.log("Correct!");
+                game.correct++;
+            }
+            else if (value != currentNotice.isFake) {
+                console.log("Incorrect")
+                game.incorrect++;
+            }
+            game.total++;
         }
-        else {
-            console.log("Incorrect")
-            game.incorrect++;
-        }
-        game.total++;
         console.log(`% score: ${(game.correct / game.total) * 100}`);
         currentNotice = res;
         console.log(currentNotice);
@@ -40,6 +42,9 @@ function step(value) {
 }
 
 function printNotice(currentNotice){
-    if (currentNotice.notice_url=="") document.getElementById("notice").innerHTML = currentNotice.notice + "<br>";
+    //si ponemos link
+    /*if (currentNotice.notice_url=="") document.getElementById("notice").innerHTML = currentNotice.notice + "<br>";
     else  document.getElementById("notice").innerHTML= currentNotice.notice + "<center><a href="+currentNotice.notice_url + "\" id =\"notice-link\">Click here to see the Notice!</a></center>";
+    */
+   document.getElementById("notice").innerHTML = currentNotice.notice
 }
