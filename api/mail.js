@@ -2,7 +2,6 @@
 
 const nodemailer = require('nodemailer');
 
-var nodemailer = require('nodemailer');
 // email sender function
 function sendEmail(req, res) {
     // Definimos el transporter
@@ -18,7 +17,7 @@ function sendEmail(req, res) {
         from: transporter.user,
         to: transporter.user,
         subject: 'Nuevo envio formulario de contacto',
-        text: req.body.text
+        text: req.body.message
     };
     // Enviamos el email
     transporter.sendMail(mailOptions, function (error, info) {
@@ -32,5 +31,5 @@ function sendEmail(req, res) {
 };
 
 module.exports = {
-    sendEmail: sendEmail
+    sendEmail
 }

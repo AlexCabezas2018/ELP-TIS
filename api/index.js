@@ -6,62 +6,60 @@
 const Papa = require('papaparse');
 const fs = require('fs');
 const Express = require('express');
-const mail = require('./mail.js');
-
-require('dotenv').config(); //env file
+const mail = require('./mail');
+const dotenv = require('dotenv'); //env file
 
 var fakeNews = [];
 
-function init() {
-    parseFile('api/dataset/fake-news.csv', data => {
-        data.forEach(elem => {
-            fakeNews.push({
-                notice: elem.Statement,
-                isFake: (elem.Label == 'TRUE') ? false : true,
-                notice_url: ""
-            }); //dataset say if a new is real or not. this field stores if the new is fake or not
-        })
-    });
+dotenv.config();
 
-    parseFile('api/dataset/gossipcop_fake.csv', data => {
-        data.forEach(elem => {
-            fakeNews.push({
-                notice: elem.title,
-                isFake: true,
-                notice_url: elem.news_url
-            })
-        });
-    });
-
-    parseFile('api/dataset/politifact_fake.csv', data => {
-        data.forEach(elem => {
-            fakeNews.push({
-                notice: elem.title,
-                isFake: true,
-                notice_url: elem.news_url
-            })
+parseFile('api/dataset/fake-news.csv', data => {
+    data.forEach(elem => {
+        fakeNews.push({
+            notice: elem.Statement,
+            isFake: (elem.Label == 'TRUE') ? false : true,
+            notice_url: ""
         });
     })
+});
 
-    let app = Express();
-
-    app.listen(process.env.PORT, function () {
-        console.log('Listening on port 3000!');
+parseFile('api/dataset/gossipcop_fake.csv', data => {
+    data.forEach(elem => {
+        fakeNews.push({
+            notice: elem.title,
+            isFake: true,
+            notice_url: elem.news_url
+        })
     });
+});
 
-    app.use(Express.static('public'));
-
-
-    /* Routes */
-    app.get('/api/notice', (req, res) => {
-        res.status(200).json(pickRandomNotice()).end();
+parseFile('api/dataset/politifact_fake.csv', data => {
+    data.forEach(elem => {
+        fakeNews.push({
+            notice: elem.title,
+            isFake: true,
+            notice_url: elem.news_url
+        })
     });
+})
 
-    app.post('/api/contact/', (req, res) => {
-        mail.sendEmail(req, res);
-    });
+let app = Express();
+app.use(Express.static('public'));
+app.use(Express.urlencoded({ extended: false }))
 
-}
+/* Routes */
+app.get('/api/notice', (req, res) => {
+    res.status(200).json(pickRandomNotice()).end();
+});
+
+app.post('/api/contact/', (req, res) => {
+    mail.sendEmail(req, res);
+});
+
+app.listen(process.env.PORT, function () {
+    console.log(`Listening on port ${process.env.PORT}`);
+});
+
 
 function parseFile(fileName, parseFunction) {
     const file = fs.createReadStream(fileName);
@@ -81,5 +79,3 @@ function parseFile(fileName, parseFunction) {
 function pickRandomNotice() {
     return fakeNews[Math.floor(Math.random() * fakeNews.length)];
 }
-
-init();
