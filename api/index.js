@@ -55,6 +55,7 @@ function init() {
     app.get('/api/notice', (req, res) => {
         res.status(200).json(pickRandomNotice()).end();
     });
+
 }
 
 function parseFile(fileName, parseFunction) {

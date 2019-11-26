@@ -19,6 +19,7 @@
   "homepage": "https://github.com/AlexCabezas2018/ELP-TIS#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
     "express": "^4.17.1",
     "file-system": "^2.2.2",
     "nodemailer": "^6.3.1",
