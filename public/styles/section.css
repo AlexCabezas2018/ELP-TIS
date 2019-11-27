@@ -137,4 +137,5 @@ textarea{
     width: 40%;
     cursor: none;
     border:2px dashed black;
+    opacity: 0;
 }

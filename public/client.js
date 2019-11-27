@@ -61,6 +61,7 @@ function progressAnswer(correct, score){
     //Style HTML elem
     document.getElementById("progress").style.backgroundColor = (correct)?"green":"red";
     document.getElementById("progress").style.color = "white";
+    document.getElementById("progress").style.opacity = 1;
     //Put HTML elem
     var content = document.createTextNode(text);
     div.appendChild(content);
@@ -75,6 +76,7 @@ function progressInfo(){
      //Style HTML elem
      document.getElementById("progress").style.backgroundColor = "white";
      document.getElementById("progress").style.color = "black";
+     document.getElementById("progress").style.opacity = 0;
      //Put HTML elem
      var content = document.createTextNode(text);
      div.appendChild(content);
