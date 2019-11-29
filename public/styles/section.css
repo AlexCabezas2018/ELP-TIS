@@ -82,9 +82,10 @@ textarea{
 
 .button-more-info{
     width: 100%;
-    opacity: 75%;
+    opacity: 85%;
     border: 0;
     padding:2%;
+    font-size: 1.5em;
 }
 
 .button-more-info:hover{

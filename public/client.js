@@ -21,9 +21,9 @@ function getNotice(callback) {
         .then(res => callback(res));
 }
 
-function step(value,info) {
+function step(value, info) {
     getNotice(res => {
-        if(!info){
+        if (!info) {
             if (value == currentNotice.isFake) {
                 console.log("Correct!");
                 game.correct++;
@@ -33,7 +33,7 @@ function step(value,info) {
                 game.incorrect++;
             }
             game.total++;
-            progressAnswer(value == currentNotice.isFake,((game.correct / game.total) * 100).toFixed(2));
+            progressAnswer(value == currentNotice.isFake, ((game.correct / game.total) * 100).toFixed(2));
         }
         else progressInfo();
 
@@ -44,40 +44,40 @@ function step(value,info) {
     });
 }
 
-function printNotice(currentNotice){
+function printNotice(currentNotice) {
     //si ponemos link
     /*if (currentNotice.notice_url=="") document.getElementById("notice").innerHTML = currentNotice.notice + "<br>";
     else  document.getElementById("notice").innerHTML= currentNotice.notice + "<center><a href="+currentNotice.notice_url + "\" id =\"notice-link\">Click here to see the Notice!</a></center>";
     */
-   document.getElementById("notice").innerHTML = currentNotice.notice
+    document.getElementById("notice").innerHTML = currentNotice.notice
 }
 
-function progressAnswer(correct, score){
+function progressAnswer(correct, score) {
     //GET HTHL elem
     document.getElementById('progress').innerHTML = "";
-    var div = document.getElementById('progress');
+    const div = document.getElementById('progress');
     //Prepare text
-    var text = (correct)?"Correct, you have " + score + "% questions right":"Incorrect, you have " + score + "% questions rigth";
+    const text = (correct) ? "Correct, you have " + score + "% questions right" : "Incorrect, you have " + score + "% questions rigth";
     //Style HTML elem
-    document.getElementById("progress").style.backgroundColor = (correct)?"green":"red";
+    document.getElementById("progress").style.backgroundColor = (correct) ? "green" : "red";
     document.getElementById("progress").style.color = "white";
     document.getElementById("progress").style.opacity = 1;
     //Put HTML elem
-    var content = document.createTextNode(text);
+    const content = document.createTextNode(text);
     div.appendChild(content);
 }
 
-function progressInfo(){
-     //GET HTHL elem
-     document.getElementById('progress').innerHTML = "";
-     var div = document.getElementById('progress');
-     //Prepare text
-     var text = "RESULT";
-     //Style HTML elem
-     document.getElementById("progress").style.backgroundColor = "white";
-     document.getElementById("progress").style.color = "black";
-     document.getElementById("progress").style.opacity = 0;
-     //Put HTML elem
-     var content = document.createTextNode(text);
-     div.appendChild(content);
+function progressInfo() {
+    //GET HTHL elem
+    document.getElementById('progress').innerHTML = "";
+    const div = document.getElementById('progress');
+    //Prepare text
+    const text = "RESULT";
+    //Style HTML elem
+    document.getElementById("progress").style.backgroundColor = "white";
+    document.getElementById("progress").style.color = "black";
+    document.getElementById("progress").style.opacity = 0;
+    //Put HTML elem
+    const content = document.createTextNode(text);
+    div.appendChild(content);
 }
