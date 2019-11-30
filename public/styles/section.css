@@ -86,6 +86,8 @@ textarea{
     border: 0;
     padding:2%;
     font-size: 1.5em;
+    color:white;
+    background: rgb(92, 91, 91);
 }
 
 .button-more-info:hover{
@@ -130,13 +132,15 @@ textarea{
 }
 
 #progress{
-    margin-top: 35.7em;
-    height: 1.5em;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 37em;
+    height: 2.5em;
+    justify-content: center;
     align-items: center;
     font-weight: bold;
     width: 40%;
-    cursor: none;
     border:2px dashed black;
     opacity: 0;
 }
+

@@ -6,13 +6,13 @@ let currentNotice = undefined;
 let game = {
     correct: 0,
     incorrect: 0,
-    total: 0
+    total: 0,
+    incorrectStreak: 0
 }
 
 window.onload = () => getNotice(res => {
     currentNotice = res;
     printNotice(currentNotice);
-    console.log(currentNotice);
 });
 
 function getNotice(callback) {
@@ -25,21 +25,19 @@ function step(value, info) {
     getNotice(res => {
         if (!info) {
             if (value == currentNotice.isFake) {
-                console.log("Correct!");
                 game.correct++;
+                game.incorrectStreak = 0;
             }
             else if (value != currentNotice.isFake) {
-                console.log("Incorrect")
                 game.incorrect++;
+                game.incorrectStreak++;
             }
             game.total++;
-            progressAnswer(value == currentNotice.isFake, ((game.correct / game.total) * 100).toFixed(2));
+            game.score = ((game.correct / game.total) * 100).toFixed(2);
+            progressAnswer(value == currentNotice.isFake, game);
         }
         else progressInfo();
-
-        console.log(`% score: ${(game.correct / game.total) * 100}`);
         currentNotice = res;
-        console.log(currentNotice);
         printNotice(currentNotice);
     });
 }
@@ -52,20 +50,33 @@ function printNotice(currentNotice) {
     document.getElementById("notice").innerHTML = currentNotice.notice
 }
 
-function progressAnswer(correct, score) {
+function progressAnswer(correct, game) {
+
+
     //GET HTHL elem
     document.getElementById('progress').innerHTML = "";
     const div = document.getElementById('progress');
     //Prepare text
-    const text = (correct) ? "Correct, you have " + score + "% questions right" : "Incorrect, you have " + score + "% questions rigth";
+    const text = (correct) ? "Correct, you have " + game.score + "% questions right" : "Incorrect, you have " + game.score + "% questions rigth";
     //Style HTML elem
     document.getElementById("progress").style.backgroundColor = (correct) ? "green" : "red";
     document.getElementById("progress").style.color = "white";
     document.getElementById("progress").style.opacity = 1;
+
     //Put HTML elem
     const content = document.createTextNode(text);
     div.appendChild(content);
-}
+
+    //Put link 
+    if(game.incorrectStreak > 3) {
+        var a = document.createElement('a');
+        var link = document.createTextNode("Do you want to know how to beat Fake News?"); 
+        a.appendChild(link);  
+        a.href = "#manual";
+        a.style.color ="white";
+        document.getElementById("progress").appendChild(a);  
+    }
+}   
 
 function progressInfo() {
     //GET HTHL elem
