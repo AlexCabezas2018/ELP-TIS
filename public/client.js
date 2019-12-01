@@ -12,7 +12,6 @@ let game = {
 
 window.onload = () => getNotice(res => {
     currentNotice = res;
-    fetch('visit');
     printNotice(currentNotice);
 });
 

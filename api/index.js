@@ -6,8 +6,10 @@
 const Papa = require('papaparse');
 const fs = require('fs');
 const Express = require('express');
+const session = require('express-session');
 
 let visits = 0;
+let currentDate = undefined;
 
 require('dotenv').config(); //env file
 
@@ -44,27 +46,41 @@ function init() {
         });
     })
 
+
+    // Every 20 seconds, the session restores the variable in order to count the login as a new visit
+    function resetCookie(req, res, next) {
+        if (Date.now() - currentDate > 20 * 1000) {
+            req.session.logged = false;
+        }
+        next();
+    }
+
     let app = Express();
     app.use(Express.static('public'));
 
-    app.listen(process.env.PORT, function () {
-        console.log('Listening on port 3000!');
+    app.use(session({
+        saveUninitialized: false,
+        secret: 'foobar34',
+        resave: false,
+    }));
+
+    app.get('/', resetCookie, (req, res) => {
+        if (!req.session.logged) {
+            req.session.logged = true;
+            currentDate = Date.now();
+            console.log("[INFO] Current visits: " + (++visits));
+        }
+        res.redirect('/game.html')
     });
 
     /* Routes */
-    app.get('/visit', (req, res) => {
-        console.log("[INFO] Current visits: " + (++visits));
-        res.status(200).end();
-    });
-
     app.get('/api/notice', (req, res) => {
         res.status(200).json(pickRandomNotice()).end();
     });
 
-    app.get('/', (req, res) => {
-        res.end("Hello");
+    app.listen(process.env.PORT, function () {
+        console.log(`Listening on port ${process.env.PORT}!`);
     });
-
 }
 
 function parseFile(fileName, parseFunction) {
