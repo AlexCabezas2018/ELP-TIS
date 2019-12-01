@@ -7,6 +7,8 @@ const Papa = require('papaparse');
 const fs = require('fs');
 const Express = require('express');
 
+let visits = 0;
+
 require('dotenv').config(); //env file
 
 var fakeNews = [];
@@ -43,17 +45,24 @@ function init() {
     })
 
     let app = Express();
+    app.use(Express.static('public'));
 
     app.listen(process.env.PORT, function () {
         console.log('Listening on port 3000!');
     });
 
-    app.use(Express.static('public'));
-
-
     /* Routes */
+    app.get('/visit', (req, res) => {
+        console.log("[INFO] Current visits: " + (++visits));
+        res.status(200).end();
+    });
+
     app.get('/api/notice', (req, res) => {
         res.status(200).json(pickRandomNotice()).end();
+    });
+
+    app.get('/', (req, res) => {
+        res.end("Hello");
     });
 
 }

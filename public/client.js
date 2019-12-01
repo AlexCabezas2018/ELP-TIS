@@ -12,6 +12,7 @@ let game = {
 
 window.onload = () => getNotice(res => {
     currentNotice = res;
+    fetch('visit');
     printNotice(currentNotice);
 });
 
@@ -68,15 +69,15 @@ function progressAnswer(correct, game) {
     div.appendChild(content);
 
     //Put link 
-    if(game.incorrectStreak > 3) {
-        var a = document.createElement('a');
-        var link = document.createTextNode("Do you want to know how to beat Fake News?"); 
-        a.appendChild(link);  
+    if (game.incorrectStreak > 3) {
+        let a = document.createElement('a');
+        let link = document.createTextNode("Do you want to know how to beat Fake News?");
+        a.appendChild(link);
         a.href = "#manual";
-        a.style.color ="white";
-        document.getElementById("progress").appendChild(a);  
+        a.style.color = "white";
+        document.getElementById("progress").appendChild(a);
     }
-}   
+}
 
 function progressInfo() {
     //GET HTHL elem
