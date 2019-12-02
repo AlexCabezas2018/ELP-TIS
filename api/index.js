@@ -78,7 +78,7 @@ function init() {
         res.status(200).json(pickRandomNotice()).end();
     });
 
-    app.listen(process.env.PORT, function () {
+    app.listen(process.env.PORT, "0.0.0.0", function () {
         console.log(`Listening on port ${process.env.PORT}!`);
     });
 }
