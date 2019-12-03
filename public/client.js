@@ -68,11 +68,11 @@ function progressAnswer(correct, game) {
     div.appendChild(content);
 
     //Put link 
-    if (game.incorrectStreak > 3) {
+    if (game.incorrectStreak > 2) {
         let a = document.createElement('a');
         let link = document.createTextNode("Do you want to know how to beat Fake News?");
         a.appendChild(link);
-        a.href = "#manual";
+        a.href = "./manual.html";
         a.style.color = "white";
         document.getElementById("progress").appendChild(a);
     }

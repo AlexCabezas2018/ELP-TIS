@@ -144,3 +144,8 @@ textarea{
     opacity: 0;
 }
 
+.user-link{
+    text-decoration: none;
+    color: white;
+    cursor:pointer;
+}
