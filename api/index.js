@@ -47,7 +47,7 @@ function init() {
     })
 
     function addVisit(req, res, next) {
-        if(!req.session.logged || req.path == '/') {
+        if(!req.session.logged) {
             req.session.logged = true;
             logger("[INFO] Current visits: " + (++visits));
         }
