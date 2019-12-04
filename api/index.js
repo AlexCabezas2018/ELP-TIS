@@ -7,9 +7,9 @@ const Papa = require('papaparse');
 const fs = require('fs');
 const Express = require('express');
 const session = require('express-session');
+const logger = require('log-to-file');
 
 let visits = 0;
-let currentDate = undefined;
 
 require('dotenv').config(); //env file
 
@@ -46,12 +46,12 @@ function init() {
         });
     })
 
-
-    // Every 20 seconds, the session restores the variable in order to count the login as a new visit
-    function resetCookie(req, res, next) {
-        if (Date.now() - currentDate > 20 * 1000) {
-            req.session.logged = false;
+    function addVisit(req, res, next) {
+        if(!req.session.logged || req.path == '/') {
+            req.session.logged = true;
+            logger("[INFO] Current visits: " + (++visits));
         }
+
         next();
     }
 
@@ -64,12 +64,9 @@ function init() {
         resave: false,
     }));
 
-    app.get('/', resetCookie, (req, res) => {
-        if (!req.session.logged) {
-            req.session.logged = true;
-            currentDate = Date.now();
-            console.log("[INFO] Current visits: " + (++visits));
-        }
+    app.use(addVisit);
+
+    app.get('/', (req, res) => {
         res.redirect('/game.html')
     });
 
