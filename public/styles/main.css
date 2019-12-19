@@ -41,3 +41,10 @@ section{
     display: flex;
     justify-content: center;
 }
+
+.div_license{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

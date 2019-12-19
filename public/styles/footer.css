@@ -1,0 +1,21 @@
+.footer{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    background:#444;
+    color: #FFFFFF;
+    overflow:hidden;
+    opacity: 98%;
+    bottom: 0;
+    width: 100%;
+    padding: 3em 0 ;
+}
+
+.footer>a{
+    color: rgb(167, 164, 164);
+}
+
+.footer_aux{
+    position: relative;
+}

@@ -149,3 +149,7 @@ textarea{
     color: white;
     cursor:pointer;
 }
+
+footer{
+    position: absolute;
+}
