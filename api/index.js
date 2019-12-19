@@ -9,7 +9,7 @@ const Express = require('express');
 const session = require('express-session');
 const logger = require('log-to-file');
 
-let visits = 0;
+let visits = 1950;
 
 require('dotenv').config(); //env file
 
